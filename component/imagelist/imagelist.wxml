@@ -1,0 +1,5 @@
+<!--component/imagelist.wxml-->
+<view wx:if="{{srcs.length > 1}}" wx:key="{{index}}"  class="{{srcs.length % 2 == 1 ?'evenimages':'oddimages'}}">
+  <image wx:for="{{srcs}}" bindtap='openImg'  data-imgsrc="{{hostimg}}{{item}}" wx:key="{{index}}" mode='aspectFill'src="{{hostimg}}{{item}}"></image>
+</view>
+<image wx:if="{{srcs.length == 1}}" bindload='cusImageLoad'  bindtap='openImg'  data-imgsrc="{{hostimg}}{{srcs[0]}}" style='height:{{imageheight}};width:{{imageWidth}}' src="{{hostimg}}{{srcs[0]}}"></image>

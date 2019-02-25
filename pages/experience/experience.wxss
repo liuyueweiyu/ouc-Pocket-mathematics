@@ -1,0 +1,7 @@
+@import '/component/banner/banner';
+@import '/component/dialogue/dialogue';
+@import '/component/publishbutton/publishbutton';
+.block{
+  width: 750rpx;
+  height: 98rpx;
+}

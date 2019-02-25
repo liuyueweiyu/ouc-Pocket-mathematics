@@ -1,0 +1,26 @@
+<sign>
+    <form bindsubmit='submit'>
+      <view class='inputitem clearfloat'>
+        <image src='/images/label.png' mode='widthFix'></image>
+        <input name='nickName' placeholder='昵称'></input>
+      </view>
+      <view class='inputitem clearfloat'>
+        <image src='/images/people.png' mode='widthFix'></image>
+        <input name='stuCode' maxlength="12" placeholder='学号'></input>
+      </view>
+      <view class='inputitem clearfloat'>
+        <image src='/images/card.png' mode='widthFix'></image>
+        <input name='name' placeholder='姓名'></input>
+      </view>
+      <view class='inputitem clearfloat'>
+        <image src='/images/lock.png' mode='widthFix'></image>
+        <input type='password' name='password' placeholder='密码'></input>
+      </view>
+          <view class='inputitem clearfloat'>
+          <image src='/images/email.png' mode='widthFix'></image>
+          <input name='email' placeholder='邮箱'></input>
+      </view>
+      <navigator open-type='redirect' class='navigator' url='../login/login'>已有账号？立即登录</navigator>
+      <button bindgetuserinfo='getUserInfo' open-type="getUserInfo" form-type='submit' class='button'>注册并登录</button>
+    </form>
+</sign>

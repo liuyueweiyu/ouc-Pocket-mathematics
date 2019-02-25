@@ -1,0 +1,18 @@
+<sign>
+  <form bindsubmit='submit' >
+    <view class='inputitem paddingclear clearfloat'>
+      <image src='/images/people.png' mode='widthFix'></image>
+      <input name='stuCode' placeholder='学号'></input>
+    </view>
+    <view class='inputitem clearfloat'>
+      <image src='/images/lock.png' mode='widthFix'></image>
+      <input type='password' placeholder='密码' name='password'></input>
+    </view>
+    <view class='navigators clearfloat'>
+      <navigator url='../forget/forget' class='navigator' open-type="redirect">忘记密码</navigator>
+      <navigator url='../register/register' class='navigator right' open-type="redirect">没有账号？立即注册</navigator>
+    </view>
+    <button form-type='submit' open-type="getUserInfo" class='button'>登录</button>
+  </form>
+</sign>
+

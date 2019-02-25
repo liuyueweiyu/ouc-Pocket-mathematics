@@ -1,0 +1,20 @@
+/* component/imagelist.wxss */
+.evenimages,.oddimages{
+  width: 100%;
+}
+.evenimages image{
+  width: 224rpx;
+  height: 224rpx;
+  margin-right: 8rpx;
+}
+.evenimages image:nth-of-type(3n){
+  margin-right: 0rpx;
+}
+.oddimages image{
+  width: 341rpx;
+  height: 243rpx;
+  margin-right: 8rpx;
+}
+.oddimages image:nth-of-type(2n){
+  margin-right: 0rpx;
+}

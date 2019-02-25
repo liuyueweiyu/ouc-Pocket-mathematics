@@ -1,0 +1,50 @@
+@import "/component/sign/sign";
+
+.inputitem{
+  padding-top: 96rpx; 
+  width: 456rpx;
+  height: 72rpx;
+  border-bottom: rgb(217, 217, 217) solid 4rpx;
+}
+.paddingclear{
+  padding: 0;
+}
+.inputitem image{
+  float: left;
+  width: 38rpx;
+  margin-left: 15rpx;  
+  box-sizing: border-box;
+}
+.inputitem input{
+  width: 350rpx;
+  float: right;
+  font-size:30rpx;
+  font-weight:400;
+  color:rgba(61,61,61,1);
+  line-height:24rpx;
+}
+.navigators{
+  /* margin: 97rpx 0 25rpx 0; */
+  margin: 49rpx 0 25rpx;
+
+}
+.navigator{
+  float: left;
+  font-size:20rpx;
+  font-weight:400;
+  color:rgba(143,143,143,1);
+  line-height:24rpx;
+}
+.right{
+  float: right;
+}
+
+.button{
+  width:456rpx;
+  height:80rpx;
+  background:#fa8b4b;
+  border-radius:10rpx;
+  font-size:32rpx;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}

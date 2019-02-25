@@ -1,0 +1,6 @@
+<!--pages/test/test.wxml-->
+<!-- <form bindsubmit='submit' report-submit='true'>
+  <input  name='name'></input>
+  <button form-type='submit'>提交</button>
+</form> -->
+<view class='empty'>暂无信息!</view>

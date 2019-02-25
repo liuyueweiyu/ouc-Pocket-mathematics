@@ -1,0 +1,55 @@
+
+/* 菜单 */
+.menu{
+  height: 98rpx;
+  width: 750rpx;
+  border-top: 2rpx solid #b3b3b3;
+  padding: 0 100rpx;
+  bottom: 0;
+  position: fixed;
+  background: #fff;  
+}
+.menu .item{
+  float: left;
+  height: 100%;
+  margin-left: 202rpx;
+  position: relative;
+}
+.menu .item:first-of-type{
+  margin-left: 0rpx;
+}
+.menu .item image{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  margin-top: 13rpx;
+  background: #C1C4CC;
+}
+
+.menu .item text{
+  font-size: 24rpx;
+  color: #808388;
+  display: block;
+  line-height: 24rpx;
+  margin-top: 8rpx;
+  text-align: center;
+}
+.menu .choosed text{
+  color: #6194ee;
+}
+.menu .choosed image{
+  background:  #6194EE
+}
+.menu .item .spot{
+  position: absolute;
+  display: block;
+  width:36rpx;
+  height:36rpx;
+  line-height: 36rpx;
+  background:rgba(241,44,32,1);
+  border-radius:50%;
+  text-align: center;
+  color: white;
+  top: 0;
+  left:36rpx;
+}

@@ -1,0 +1,66 @@
+/* pages/reply/reply.wxss */
+.replylist{
+  width: 690rpx;
+  min-height: calc(100vh - 108rpx);
+  background:rgba(255,255,255,1);
+  box-shadow:0px -7rpx 7rpx 0px rgba(0, 0, 0, 0.04);
+  border-radius:40rpx 40rpx 0px 0px;
+  padding: 0 30rpx 98rpx;
+}
+.replylist .item:first-of-type{
+  border-radius:40rpx 40rpx 0px 0px;
+}
+.replylist .item{
+  width: 100%;
+  padding: 36rpx 0 64rpx;
+}
+.replylist .item .left{
+  float: left;
+  position: relative;
+  height: 90rpx;
+  width: 90rpx;
+}
+.replylist .item .cover{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.replylist .item .spot{
+  position: absolute;
+  top: 0;
+  left: calc( 100% - 8rpx );
+  width:16rpx;
+  height:16rpx;
+  background:rgba(241,44,32,1);
+  border-radius:50%;
+}
+.replylist .item .right{
+  float: right;
+  width: 582rpx;
+}
+.replylist .item .right .name{
+  float: left;
+  font-size:30rpx;
+  color:rgba(90,124,171,1);
+}
+.replylist .item .right .time{
+  float: right;
+  font-size:24rpx;
+  color:rgba(179,179,179,1);
+}
+
+.replylist .item .right .content{
+  display: block;
+  margin:31rpx 0 35rpx;
+  font-size:30rpx;
+
+}
+.replylist .item .right .title{
+  display: block;
+  background:rgba(241,242,242,1);
+  border-radius:10rpx;
+  font-size:28rpx;
+  color:rgba(96,97,98,1);
+  padding: 20rpx 23rpx;
+
+}

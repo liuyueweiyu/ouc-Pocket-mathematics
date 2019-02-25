@@ -1,0 +1,36 @@
+<!--component/dialogue/dialogue.wxml-->
+<view class='dialoguelist'>
+  <view wx:for='{{list}}' wx:key='{{index}}' class='dialogue' >
+  
+      <intro author='{{item.author}}' Time='{{item.Time}}' headImage='{{item.headImage}}'></intro>
+      <navigator url='/pages/detail/detail?commit={{reply}}&&id={{item.id}}'>
+        <text class='title'>{{item.Title}}</text>
+        <text class='content'>{{item.Content}}</text>
+      </navigator>
+      <imagelist srcs='{{item.images}}'></imagelist>
+      <view wx:if="{{reply=='1'}}" class='reply'>
+      <navigator url='/pages/detail/detail?commit={{reply}}&&id={{item.id}}'>
+
+        <view class='item'>
+          <image class='scan' src='/images/scan.png'></image>
+          <text>{{item.clickNum}}</text>
+        </view>
+        <view class='item'>
+            <image class='commit' src='/images/commit.png'></image>
+            <text>{{item.replyNum}}</text>
+        </view>
+      </navigator>
+        <view class='inputbox'>
+            <image class='picture' wx:if='{{imgindex != index}}' data-index='{{index}}' bindtap='chooseImg' src='/images/picture.png'></image>
+            <image class='picture' wx:if='{{imgindex == index}}'  data-index='{{index}}' bindtap='chooseImg' src='/images/picture-blue.png'></image>
+            <input  data-id='{{item.id}}' wx:if='{{textindex == index}}' class='commitinput' bindfocus='setTextindex' data-index='{{index}}'   confirm-type='send' bindconfirm='reply'  value='{{text}}' bindinput='bindinput' placeholder='回复'></input>
+            <input wx:if='{{textindex != index}}'  data-id='{{item.id}}' class='commitinput' bindfocus='setTextindex' data-index='{{index}}'   bindinput='bindinput' placeholder='回复'></input>
+            <button wx:if="{{isAndroid}}" data-id='{{item.id}}' bindtap='reply' data-index='{{index}}' data-reply='{{item.replyNum}}' class='button'>发送</button>
+        </view>
+      </view>
+    
+  
+  </view>
+  <loading wx:if='{{loading == 1}}'></loading>
+</view>
+<view wx:if='{{list.length == 0 && empty}}' class='empty'>暂无信息!</view>

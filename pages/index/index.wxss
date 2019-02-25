@@ -1,0 +1,6 @@
+@import './stylesheet/home.wxss';
+@import "./stylesheet/message.wxss";
+@import './stylesheet/advisory.wxss';
+@import './stylesheet/reply.wxss';
+@import './stylesheet/person.wxss';
+@import './stylesheet/menu.wxss';

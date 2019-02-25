@@ -1,0 +1,47 @@
+/* pages/editor/editor.wxss */
+.box{
+
+  display: block;
+  height: calc(100vh - 1rpx);
+  width: 750rpx;
+  padding-top: 1rpx;
+  background: rgb(239, 239, 244);
+}
+.input{
+  padding: 30rpx 35rpx;
+  height: 30rpx;
+  width: 690rpx;
+  position: relative;
+}
+.input:hover .cross{
+  
+  display: block;
+}
+.cross{
+  position: absolute;
+  display: none;
+  /* display: block; */
+  width: 30rpx;
+  height: 30rpx;
+  padding: 0;
+  background: rgb(126, 127, 134);
+  border-radius: 50%;
+  line-height: 30rpx;
+  text-align: center;
+  font-size:28rpx;
+  font-weight:900;
+  color: #fff;
+  top: 35rpx;
+  right: 30rpx;
+  z-index: 10;
+}
+.background{
+  margin-top: 30rpx;
+  display: block;
+  background: #fff;
+}
+.botton{
+  position: none;
+  /* line-height: 30rpx; */
+
+}

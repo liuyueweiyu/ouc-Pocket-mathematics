@@ -1,0 +1,28 @@
+/* component/navitem/navitem.wxss */
+.list{
+  height: calc(100vh - 165rpx);
+  width: 750rpx;
+  background:rgba(239,239,244,1);
+}
+.list .item{
+  position: relative;
+  display: block;
+  height: 88rpx;
+  width: 690rpx;
+  background: #fff;
+  color: #1A1A1A;
+  line-height: 88rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-bottom: 16rpx;
+  font-size:34rpx;
+}
+.list .item image{
+  width: 20rpx;
+  height: 35rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 30rpx;
+  margin: auto 0;
+}

@@ -1,0 +1,7 @@
+<!--component/banner/banner.wxml-->
+<template name="banner">
+  <view class='banner'>
+    <image class='image' src="{{imgsrc}}"></image>
+    <text class='title'>{{text}}</text>
+  </view>
+</template>

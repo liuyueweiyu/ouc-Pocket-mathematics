@@ -1,0 +1,10 @@
+<!--component/articallist/articallist.wxml-->
+  <view class='articallist'>
+    <view wx:for='{{list}}' wx:key='{{index}}' bindtap='article' data-link='{{item.Link}}' class='item'>
+      <image src='{{item.CoverLink}}'></image>
+      <view class='textbox'>
+          <text class='title'>{{item.Title}}</text>
+      </view>
+    </view>
+  </view>
+  <loading wx:if='{{loading == 1}}'></loading>

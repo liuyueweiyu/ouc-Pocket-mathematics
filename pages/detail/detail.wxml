@@ -1,0 +1,29 @@
+<!--pages/detail/detail.wxml-->
+<view class='content'>
+  <intro author='{{article.author}}' Time='{{article.Time}}' headImage='{{article.headImage}}'></intro>
+  <view class='contentbox'>
+    <view class='title'>{{article.Title}}</view>
+    <view class='artile'>{{article.Content}}</view>
+    <imagelist srcs='{{article.images}}'></imagelist>
+  </view>
+</view>
+
+<view wx:if='{{commit == 1}}'>
+  <view class='line'></view>
+  <view wx:for='{{list}}' wx:key='{{index}}' class='commitbox'>
+    <view wx:if='{{index == 0}}' class='all'>
+      <view class='blueline'></view>
+      全部评论<text class='count'>（{{list.length}}）</text>
+    </view>
+    <intro author='{{item.nickName}}' Time='{{item.Time}}' headImage='{{item.headImage}}'></intro>
+    <view class='commit'>{{item.Content}}</view>
+    <imagelist wx:if='{{item.image != ""}}' srcs='{{[item.image]}}'></imagelist>
+  </view>
+
+<view class='block'></view>
+  <view class='input' style='{{upinput}}'>
+      <button bindtap='chooseImg' class='button' ><image class='upimg' src='/images/picture{{img == "" ? "":"-blue"}}.png'></image></button>
+      <input class='sendcontent' bindfocus='inputFocus' bindconfirm='reply' bindblur='inputBlur' value='{{text}}' bindinput='bindinput'></input>
+      <button wx:if="{{isAndroid}}" bindtap='reply' class='button sendbutton'>发送</button>
+  </view>
+</view>

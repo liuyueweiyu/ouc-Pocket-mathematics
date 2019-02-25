@@ -1,0 +1,12 @@
+<!--component/navitem/navitem.wxml-->
+<template name="navlist">
+  <view class='list'>
+    <view  wx:for="{{navlist}}" wx:key="{{index}}">
+      <navigator  url="{{item.src}}" class='item'>
+        <text>{{item.text}}</text>
+        <image src='/images/turn-left.png'></image>
+      </navigator>
+    </view>
+    
+  </view>
+</template>

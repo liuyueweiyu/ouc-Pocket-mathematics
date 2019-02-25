@@ -1,0 +1,4 @@
+<import src='/component/banner/banner' />
+<import src='/component/navlist/navlist' />
+<template is='banner' data='{{...banner}}' />
+<template is='navlist' data='{{navlist}}' />

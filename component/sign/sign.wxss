@@ -1,0 +1,30 @@
+/* component/sign/sign.wxss */
+.container{
+  padding: 0;
+  position: relative;
+  width: 750rpx;
+  height: 100vh;
+  background: #61D1E9;
+}
+.child{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.background{
+  width: 617rpx;
+  bottom: 0;
+}
+.box{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  bottom: 14.6vh;
+  width: 650rpx;
+  height: 79.6vh;
+  background: linear-gradient(#fff 0%,#fff 60%,rgba(255, 255, 255, 0.88));
+  border-radius: 10rpx;
+  box-shadow: 0 16rpx 20rpx 0 rgba(145, 73, 73, 0.26);
+  
+}

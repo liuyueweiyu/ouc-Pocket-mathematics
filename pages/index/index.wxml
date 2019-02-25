@@ -1,0 +1,140 @@
+
+<!-- 首页 -->
+<view wx:if='{{menuindex == 0}}' class='main'>
+  <view class='banner'>
+    <image mode='widthFix' src='/images/banner.png'></image>
+    <view class='intro'>
+      <navigator url='{{TitleNav}}'>
+          <text class='bigtitle'>{{Title}}</text>
+          <text class='more'>了解详细</text>
+      </navigator>
+    </view>
+  </view>
+  <view class='section'>
+    <navigator url='../communicate/communicate' class='item' style='background-color: #10aeff;'>数学交流</navigator>
+    <navigator url='../experience/experience' class='item' style='background-color: #09bb07;'>经验分享</navigator>
+    <navigator url='../share/share'  class='item' style='background-color: #f76260;'>资料共享</navigator>
+    <navigator url='../news/news'  class='item' style='background-color: #ffbe00;'>最新资讯</navigator>
+  </view>
+  <view class='consultative'>
+    <text class='title'>在线答疑</text>
+    <scroll-view class='help' scroll-y='true'>
+      <view wx:for='{{helplist}}'  wx:key="{{index}}" class='item'>
+        <image src='{{hostimg}}/{{item.headImage}}'></image>
+        <text wx:if="{{item.onLine}}">{{item.nickName}}</text>
+        <text  wx:else class='offline'>{{item.nickName}}</text>
+        <button wx:if="{{item.onLine}}" bindtap='help' data-id='{{item.id}}' data-img='{{item.headImage}}' data-name='{{item.nickName}}'>立即咨询</button>
+        <button wx:else class='offline-button' bindtap='help' data-id='{{item.id}}' data-img='{{item.headImage}}' data-name='{{item.nickName}}'>离线咨询</button>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 消息 -->
+<view wx:if='{{menuindex == 1 || menuindex == 2}}' class='message'>
+  <view class='tab'>
+    <view class="{{menuindex == 1?'conso select':'conso'}}"  data-index='1' bindtap='changeMenu'><view wx:if='{{msgnumber != 0 }}' class='spot'></view>咨询</view>
+    <view class="{{menuindex == 2?'reply select':'reply'}}"  data-index='2' bindtap='changeMenu'><view wx:if='{{replynumber != 0 }}' class='spot'></view>回复</view>
+  </view>
+  <!-- 咨询 -->
+  <view wx:if='{{menuindex == 1}}' class='advisorylist'>
+     <view wx:for='{{unReadMsg}}' wx:key='{{index}}' data-img='{{item.headImage}}' data-index='{{index}}' data-id='{{item.fromUserId}}' wx:if='{{item.delete != "true"}}' data-name='{{item.fromName}}' bindtap='advisory' class='item'>
+     <!-- <> -->
+      <movable-area class='moovablebox' x="{{x}}" y="{{y}}">
+    
+        <movable-view  direction="horizontal" out-of-bounds inertia class='itemcontainer clearfloat'>
+          <view class='itemcontent'>
+            <view class='left'>
+                <image class='cover' src='{{hostimg}}{{item.headImage}}'></image>
+            </view>
+            <view class='right'>
+              <view class='clearfloat'>
+                  <text class='name'>{{item.fromName}}</text>
+                  <text class='time'>{{item.TimeStr}}</text>
+              </view>
+              <text class='content'>回复我：{{item.isPhoto == 'False'?item.message:'[图片]'}}</text>
+              <text wx:if='{{item.unReadNums != 0}}' class='spot'>{{item.unReadNums}}</text>
+            </view>
+          </view>
+          <view catchtap='deleteadvisory' data-index='{{index}}' class='delete'>删除</view> 
+        
+        </movable-view>
+      </movable-area>
+    </view>
+  </view>
+  <!-- 回复 -->
+  <view  wx:if='{{menuindex == 2}}' class='replylist'>
+    <view wx:for='{{unReadReply}}' wx:key='{{index}}' class='item clearfloat'>
+      <view bindtap='reply'  data-index='{{index}}' data-id='{{item.id}}'>
+        <view class='left'>
+            <image class='cover' src='{{hostimg}}{{item.headImage}}'></image>
+            <view wx:if='{{item.unReadNums != 0}}' class='spot'></view>
+        </view>
+        <view class='right'>
+          <view class='clearfloat'>
+              <text class='name'>{{item.nickName}}</text>
+              <text class='time'>{{item.TimeStr}}</text>
+          </view>
+          <text class='content'>回复我：{{item.Content}}</text>
+          <text class='title'>{{item.Title}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 个人中心 -->
+<view wx:if='{{menuindex == 3}}' class='person'>
+  <view class='cover'>
+    <image bindtap='changeCover' src='{{hostimg}}{{user.headImage}}'></image>
+  </view>
+  <text class='name' style='{{user.isTeacher != "True"? "margin-bottom: 75rpx;":""}}'>{{user.nickName}}</text>
+  <view class='introitem'>
+    <image class='icon' mode='widthFix' src='/images/people.png'></image>
+    <text>学号</text>
+      {{user.stuCode}}
+  </view>
+  <view class='introitem'>
+    <image class='icon' mode='widthFix' src='/images/people.png'></image>
+    <text>姓名</text>
+      {{user.name}}
+  </view>
+  <navigator url='../editor/editor?name=2'>
+    <view class='introitem'>
+      <image class='icon' mode='widthFix' src='/images/card.png'></image>
+      <text>昵称</text>
+        {{user.nickName}}
+    <image class='turnleft' mode='widthFix' src='/images/turn-left.png'></image>
+    </view>
+  </navigator>
+    <view class='introitem'>
+    <image class='icon' mode='widthFix' src='/images/people.png'></image>
+    <text>邮箱</text>
+      {{user.name}}
+  </view>
+  <view wx:if='{{user.isTeacher == "True"}}' class='introitem'>
+    <image class='icon' mode='widthFix' src='/images/people.png'></image>
+    <text>状态</text>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          {{array[index]}}
+ 
+    </picker>
+  </view>
+  <button bindtap='logout' class='logout'>退出登录</button>
+</view>
+<!-- 菜单 -->
+<view class='menu'>
+  <view class="{{menuindex == 0? 'item choosed':'item'}}" data-index='0' bindtap='changeMenu'>
+      <image src='/images/home.png' class='picture'></image>
+      <text>首页</text>
+  </view>
+  <view class="{{menuindex == 1 || menuindex == 2? 'item choosed':'item'}}" data-index='1' bindtap='changeMenu'>
+      <image src='/images/massage.png' class='picture'></image>
+      <text>消息</text>
+      <text wx:if='{{msgnumber + replynumber != 0}}' class='spot'>{{msgnumber + replynumber}}</text>
+  </view>
+  <view class="{{menuindex == 3? 'item choosed':'item'}}" data-index='3' bindtap='changeMenu'>
+      <image src='/images/me.png' class='picture'></image>
+      <text>我的</text>
+  </view>
+</view>

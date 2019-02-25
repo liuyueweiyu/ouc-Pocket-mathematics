@@ -1,0 +1,67 @@
+/* 个人中心 */
+.person{
+  background: #EFEFF4;
+  height: 100vh;
+}
+.cover{
+  height: 300rpx;
+  position: relative;
+}
+.cover image{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 50%;
+}
+.person .name{
+  display: block;
+  font-size:37rpx;
+  color:rgba(51,51,51,1);
+  text-align: center;
+  margin-bottom:30rpx;
+
+}
+.introitem,.logout{
+  position: relative;
+  height:88rpx;
+  background:rgba(255,255,255,1);
+  border-bottom:1rpx solid rgba(214,213,214,1);
+  border-top:1rpx solid rgba(214,213,214,1);
+  text-align: center;
+  line-height: 88rpx;
+  margin-bottom: 32rpx;
+}
+.introitem .icon{
+  width: 34rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+.introitem .turnleft{
+  width: 20rpx;
+  position: absolute;
+  right: 31rpx;
+  top: 0;
+  bottom: 0;
+  margin:auto;
+}
+.introitem text{
+  position: absolute;
+  left: 83rpx;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  font-size:30rpx;
+  color:rgba(151,151,151,1);
+}
+.logout{
+  font-size:30rpx;
+  color:rgba(241,44,32,1);
+}

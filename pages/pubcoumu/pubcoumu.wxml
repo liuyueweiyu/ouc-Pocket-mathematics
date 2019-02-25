@@ -1,0 +1,29 @@
+<!--pages/publishcoumunicate/publishcoumunicate.wxml-->
+<import src='/component/publishbutton/publishbutton' />
+<form class='publishcoumunicate' bindsubmit='submit'>
+  <view wx:if="{{isExperience != 1}}" class='formitem pickers'>
+    <text>选择主题</text>
+    <picker class='picker' bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          {{array[index]}}
+    <image class='arrow' src='/images/turn-down.png'></image>
+ 
+    </picker>
+  </view>
+  <view class='formitem clearfloat'>
+    <text>输入标题</text>
+    <input name='title' placeholder='请在此输入标题'></input>
+  </view>
+  <view class='formitem clearfloat textarea'>
+    <text>输入内容</text>
+    <textarea name='content' bindblur='textBlur'  bindfocus='textFocus'>
+      <text wx:if='{{placeholder == 0}}' style='color:rgb(128,128,128)'>请在此输入内容</text>
+    </textarea>
+    
+
+  </view>
+  <view class='formitem clearfloat upimg'>
+      <image wx:for='{{imgs}}' wx:key='{{key}}' src='{{item}}'></image>
+      <button wx:if='{{imgs.length < 5}}' bindtap='chooseImg'><image src='/images/add.png'></image></button>
+  </view>
+  <button form-type='submit' class='publishbutton'>发布文章</button>
+</form>

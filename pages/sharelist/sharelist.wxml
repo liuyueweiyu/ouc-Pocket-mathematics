@@ -1,0 +1,5 @@
+<!--pages/sharelist/sharelis.wxml-->
+<import src='/component/banner/banner' />
+<import src='/component/publishbutton/publishbutton' />
+<template is='banner' data='{{...banner}}' />
+<dialogue reply='0'></dialogue>

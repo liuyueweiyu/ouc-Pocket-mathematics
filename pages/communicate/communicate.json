@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "publishbutton": "/component/publishbutton/publishbutton"
+  }
+}

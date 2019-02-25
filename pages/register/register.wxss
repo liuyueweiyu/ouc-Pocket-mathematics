@@ -1,0 +1,40 @@
+/* pages/register/register.wxss */
+@import "/component/sign/sign";
+.inputitem{
+  padding-top: 58rpx; 
+  width: 456rpx;
+  height: 72rpx;
+  border-bottom: rgb(217, 217, 217) solid 4rpx;
+}
+
+.inputitem image{
+  float: left;
+  width: 38rpx;
+  margin-left: 15rpx;  
+  box-sizing: border-box;
+}
+.inputitem input{
+  width: 350rpx;
+  float: right;
+  font-size:30rpx;
+  font-weight:400;
+  color:rgba(61,61,61,1);
+  line-height:24rpx;
+}
+.navigator{
+  font-size:20rpx;
+  color:rgba(143,143,143,1);
+  line-height:24rpx;
+  margin: 49rpx 0 25rpx;
+  text-align:right;
+
+}
+.button{
+  width:456rpx;
+  height:80rpx;
+  background:rgba(59,89,152,1);
+  border-radius:10rpx;
+  font-size:32rpx;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}

@@ -1,0 +1,121 @@
+/* pages/chat/chat.wxss */
+.chat{
+  min-height:calc(100vh - 136rpx);
+  padding:45rpx 30rpx 98rpx;
+}
+.cover{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+.send,.recieve{
+  position: relative;
+  margin-bottom: 45rpx;
+}
+.send .cover{
+  float: left;
+}
+.content{
+  position: relative;
+  display: inline-block;
+  border:1px solid #d8d8d8;
+  max-width: 396rpx;
+  padding:27rpx 18rpx;
+  word-break: break-all;
+  margin-left: 39rpx;
+  border-radius: 20rpx;
+}
+.content::after,.content::before{
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+}
+.arrow{
+  position: absolute;
+  /* background: red; */
+  width: 19rpx;
+  height: 23rpx;
+  top: 34rpx;
+  z-index: 1;
+
+}
+.send .arrow{
+  left: 111rpx;
+}
+.recieve .arrow{
+  left:562rpx;
+}
+.recieve .cover{
+  float: right;
+}
+.recieve .content{
+  background: #AFE56E;
+  float: right;
+  right:39rpx;
+}
+
+.send .image{
+  margin-left: 39rpx;
+}
+.recieve .image{
+  float: right;
+  margin-right: 39rpx;
+}
+.time{
+  margin:57rpx 0 24rpx;
+  display: flex;
+  justify-content: center;
+}
+.time:first-of-type{
+  margin:0 0 24rpx;
+}
+.time text{
+  font-size:24rpx;
+  color:rgba(255,255,255,1);
+  padding: 7rpx 26rpx;
+  background:rgba(207,207,207,1);
+  border-radius:8rpx;
+  text-align: center;
+}
+.input{
+  position: fixed;
+  background: #F4F4F6;
+  bottom: 0;
+  height: 98rpx;
+  width: 690rpx;
+  padding: 0 30rpx;
+  display: flex;
+  align-items:center;
+}
+.button{
+  margin: 0;
+  padding: 0;
+  font-size:24rpx;
+  color:rgba(128,128,128,1);
+  border-radius: 0;
+  width: 49rpx;
+  height: 49rpx;
+  line-height:49rpx;
+}
+.upimg{
+  width: 49rpx;
+  height: 49rpx;
+}
+.sendcontent{
+  flex-grow:1;
+  font-size:24rpx;
+  height:56rpx;
+  background:rgba(255,255,255,1);
+  border:2rpx solid rgba(179,179,179,1);
+  border-radius:16rpx;
+  padding: 2rpx 16rpx;
+  margin: 0 18rpx;
+}
+.sendbutton{
+  padding: 0 5rpx;
+  background: #fff;
+  width: 80rpx;
+  border:2rpx solid rgba(179,179,179,1);
+}

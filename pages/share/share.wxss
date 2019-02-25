@@ -1,0 +1,2 @@
+@import '/component/banner/banner';
+@import '/component/navlist/navlist';

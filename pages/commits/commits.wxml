@@ -1,0 +1,8 @@
+<!--pages/commits/commits.wxml-->
+<view class='commits'>
+  <view wx:for='{{list}}' class='item'>
+    <intro author='{{item.nickName}}' Time='{{item.Time}}' headImage='{{item.headImage}}'></intro>
+    <text class='content'>{{item.Content}}</text>
+    <imagelist wx:if='{{item.image != ""}}' srcs="{{item.image}}"></imagelist>
+  </view>
+</view>

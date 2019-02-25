@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "intro": "../../component/intro/intro",
+    "imagelist": "../../component/imagelist/imagelist"
+  }
+}

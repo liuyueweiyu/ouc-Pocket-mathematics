@@ -1,0 +1,7 @@
+<!--pages/experience/experience.wxml-->
+<import src='/component/banner/banner' />
+<import src='/component/publishbutton/publishbutton' />
+<template is='banner' data='{{...banner}}' />
+<dialogue empty='{{empty}}' loading='{{loading}}' list='{{list}}'></dialogue>
+<view class='block'></view>
+<publishbutton isUrl='1' isExperience='1' text='发布文章'></publishbutton>

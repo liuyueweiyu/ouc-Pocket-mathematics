@@ -1,0 +1,2 @@
+<!--pages/conmulist/comnmulis.wxml-->
+<dialogue list="{{list}}" empty='{{empty}}' loading='{{loading}}' bind:reply='changeReplys' reply='1' isAndroid='{{isAndroid}}'></dialogue>

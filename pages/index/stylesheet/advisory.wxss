@@ -1,0 +1,92 @@
+/* pages/advisory/advisory.wxss */
+
+.advisorylist{
+  width: 750rpx;
+  min-height: calc(100vh - 108rpx);
+  background:rgba(255,255,255,1);
+  box-shadow:0px -7rpx 7rpx 0px rgba(0, 0, 0, 0.04);
+  border-radius:40rpx 40rpx 0px 0px;
+  padding: 0 0 98rpx;
+}
+.advisorylist .item:first-of-type{
+  border-radius:40rpx 40rpx 0px 0px;
+}
+.advisorylist .item{
+  position: relative;
+  height: 184rpx;
+  border-bottom: 1rpx rgba(191,191,191,1) solid;
+  width: 750rpx;
+  overflow: hidden;
+}
+.moovablebox{
+  width: 750rpx;
+  height: 184rpx;
+}
+.advisorylist .item .itemcontent{
+  position: absolute;
+  float:left;
+  width: 690rpx;
+  padding: 50rpx 30rpx 24rpx;
+}
+.advisorylist .item .delete{
+  position: absolute;
+  left: 750rpx;
+  height: 184rpx;
+  line-height: 184rpx;
+  color: #fff;
+  width: 208rpx;
+  text-align: center;
+  background: rgb(255, 58, 48);
+}
+.advisorylist .item .itemcontainer{
+  height: 184rpx;
+  width: 958rpx;
+}
+.advisorylist .item .left{
+  float: left;
+  position: relative;
+  height: 90rpx;
+  width: 90rpx;
+}
+.advisorylist .item .cover{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.advisorylist .item .right{
+  float: right;
+  width: 582rpx;
+  position: relative;
+}
+.advisorylist .item .right .name{
+  float: left;
+  font-size:30rpx;
+  color:rgba(90,124,171,1);
+}
+.advisorylist .item .right .time{
+  float: right;
+  font-size:24rpx;
+  color:rgba(179,179,179,1);
+}
+
+.advisorylist .item .right .content{
+  display: block;
+  margin-top:22rpx;
+  font-size:26rpx;
+  color:rgba(179,179,179,1);
+
+}
+.advisorylist .item .right .spot{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width:36rpx;
+  height:36rpx;
+  background:rgba(241,44,32,1);
+  border-radius:50%;
+  font-size:20rpx;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 36rpx;
+}

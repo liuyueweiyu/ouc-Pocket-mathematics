@@ -1,0 +1,9 @@
+<!--component/intro/intro.wxml-->
+<view class='intro clearfloat'>
+
+  <image src='{{hostimg}}/{{headImage}}'></image>
+  <view class='intorbox'>
+    <text class='author'>{{author}}</text>
+    <text class='time'>{{TimeStr}}</text>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "publishbutton": "/component/publishbutton/publishbutton",
+    "dialogue": "/component/dialogue/dialogue"
+  }
+}

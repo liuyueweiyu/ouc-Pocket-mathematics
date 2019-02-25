@@ -1,0 +1,8 @@
+<!--component/message/message.wxml-->
+<view class='message'>
+  <view class='tab'>
+    <navigator url='/pages/advisory/advisory' class="{{titletype == 1?'conso select':'conso'}}">咨询</navigator>
+    <navigator url='/pages/reply/reply' class="{{titletype == 0?'reply select':'reply'}}">回复</navigator>
+  </view>
+  <slot></slot>
+</view>

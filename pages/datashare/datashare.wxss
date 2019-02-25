@@ -1,0 +1,28 @@
+/* pages/datashare/datashare.wxss */
+@import '/component/banner/banner';
+@import '/component/articallist/articallist';
+.newscategory{
+  width:690rpx;
+  height:56rpx;
+  border:2rpx solid rgba(247,98,96,1);
+  border-radius:28rpx;
+  margin: 32rpx auto;
+  display: flex;
+  justify-content:space-between;
+}
+.newscategory .item{
+  margin: 0;
+  display: inline-block;
+  width:216rpx;
+  height:100%;
+  border-radius:28rpx;
+  line-height: 56rpx;
+  font-size:30rpx;
+  color:rgba(247,98,96,1);
+  background: #fff;
+  border: none;
+}
+.newscategory .select{
+  background:rgba(247,98,96,1);
+  color: #fff;
+}

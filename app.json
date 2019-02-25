@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/test",
+    "pages/pubcoumu/pubcoumu",
+    "pages/detail/detail",
+    "pages/communicate/communicate",
+    "pages/editor/editor",
+    "pages/share/share",
+    "pages/article/article",
+    "pages/experience/experience",
+    "pages/login/login",    
+    "pages/chat/chat",
+    "pages/register/register",
+    "pages/conmulist/conmulist",
+    "pages/forget/forget",
+    "pages/commits/commits",
+    "pages/news/news",
+    "pages/datashare/datashare",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ouc掌上数学",
+    "navigationBarTextStyle": "black"
+  }
+}

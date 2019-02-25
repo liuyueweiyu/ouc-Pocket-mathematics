@@ -1,0 +1,4 @@
+/* pages/communicate/communicate.wxss */
+@import '/component/banner/banner';
+@import '/component/navlist/navlist';
+@import '/component/publishbutton/publishbutton';

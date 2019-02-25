@@ -1,0 +1,33 @@
+/* component/articallist/articallist.wxss */
+.articallist{
+  padding: 0 30rpx 32rpx;
+
+}
+.articallist .item{
+  height:124rpx;
+  margin-top: 32rpx;
+}
+.articallist .item image{
+  width:200rpx;
+  height: 100%;
+  float: left;
+  border-radius:10rpx;
+  margin-right: 27rpx;
+  background:rgba(0,0,0,1);
+}
+.articallist .item .textbox{
+  float: left;
+  height: 100%;
+}
+.articallist .item .title{
+  display: block;
+  margin-top: 18rpx;
+  margin-bottom: 23rpx;
+  font-size:36rpx;
+  line-height: 36rpx;
+}
+.articallist .item .intro{
+  display: block;
+  font-size:30rpx;
+  color:rgba(191,191,191,1);
+}

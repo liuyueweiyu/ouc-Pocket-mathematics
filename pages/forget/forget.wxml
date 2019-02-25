@@ -1,0 +1,25 @@
+<sign>
+  <form bindsubmit='submit'>
+    <view class='inputitem paddingclear clearfloat'>
+      <image src='/images/people.png' mode='widthFix'></image>
+      <input name='stuCode' placeholder='学号' bindinput='bindStuCode'></input>
+    </view>
+    <view class='inputitem email clearfloat'>
+      <image src='/images/email.png' mode='widthFix'></image>
+      <input name='email' placeholder='邮箱' bindinput='bindEmail'></input>
+      <button class='send' bindtap='sendEmail'>发送</button>
+    </view>
+    <view class='inputitem clearfloat'>
+      <image src='/images/check.png' mode='widthFix'></image>
+      <input name='checkCode' placeholder='验证码'></input>
+    </view>
+    <view class='inputitem clearfloat'>
+      <image src='/images/lock.png' mode='widthFix'></image>
+      <input name='newPwd' placeholder='新密码' password='true'></input>
+    </view>
+    <view class='navigators clearfloat'>
+      <navigator url='../login/login' class='navigator right' open-type="redirect">返回登录</navigator>
+    </view>
+    <button form-type='submit'  class='button'>提交</button>  
+  </form>
+</sign>

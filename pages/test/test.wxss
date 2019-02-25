@@ -1,0 +1,10 @@
+/* pages/test/test.wxss */
+.empty{
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size:30rpx;
+  /* font-family:MicrosoftYaHei; */
+  font-weight:400;
+  color:rgba(179,179,179,1);
+}

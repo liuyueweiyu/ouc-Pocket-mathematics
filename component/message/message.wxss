@@ -1,0 +1,22 @@
+/* component/message/message.wxss */
+.message{
+  background: #EFEFF4;
+}
+.message .tab{
+  display: block;
+  width: 210prx;
+  height: 36rpx;
+  padding: 37.5rpx 270rpx;
+  font-size:36rpx;
+  color:rgba(179,179,179,1);
+  
+}
+.message .tab .conso{
+  float: left;
+}
+.message .tab .reply{
+  float: right;
+}
+.message .tab .select{
+  color:rgba(0,0,0,1);
+}

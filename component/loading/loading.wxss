@@ -1,0 +1,49 @@
+/* component/loading.wxss */
+.loading{
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content:center;
+  background: #fff;
+}
+.loading-box{
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+}
+.loading-center{
+  margin:0 25rpx;
+}
+
+.loading-item{
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 50%;
+  background: #eee;
+}
+.loading-item-center{
+  animation: change 1s linear 0.5s infinite;
+}
+.loading-item-border{
+  animation: change 1s linear infinite;
+}
+@keyframes change{
+  0%{
+    width: 30rpx;
+    height: 30rpx;
+  }
+  50%{
+    width: 12rpx;
+    height: 12rpx;
+  }
+  100%{
+    width: 30rpx;
+    height: 30rpx;
+  }
+}

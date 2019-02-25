@@ -1,0 +1,8 @@
+<!--pages/datashare/datashare.wxml-->
+<import src='/component/banner/banner' />
+<import src='/component/articallist/articallist' />
+<template is='banner' data='{{...banner}}' />
+<view class='newscategory'>
+    <button wx:for='{{navlist}}' wx:key='{{index}}' data-index='{{index}}' data-category='{{item}}' bindtap='changeCate' class='{{index == select ? "item select":"item"}}'>{{item}}</button>
+</view>
+<articallist list='{{list}}' loading='{{loading}}'></articallist>

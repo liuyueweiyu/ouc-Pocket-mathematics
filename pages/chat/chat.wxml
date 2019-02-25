@@ -1,0 +1,20 @@
+<!--pages/chat/chat.wxml-->
+<view id='chat' class='chat clearfloat'>
+  <view wx:for='{{list}}' wx:key='{{index}}'>
+    <view class='time' wx:if='{{item.timetext != ""  || item.timetext=="undefined"}}'><text>{{item.timetext}}</text></view>
+    <view class='{{item.isMe == undefined ? "send":"recieve"}} clearfloat'>
+        <image wx:if='{{item.image == ""}}' class='arrow'  src='/images/{{item.isMe == undefined ? "send":"recieve"}}arrow.png'></image>
+        <image class='cover' src='{{hostimg}}{{ item.isMe == undefined? chaterimg:myimg}}'></image>
+        <image wx:if='{{item.image != ""}}'  data-imgsrc='{{item.image}}'  bindtap='openImg' data-index='{{index}}' class='image' bindload='cusImageLoad' style='height:{{size[index].imageheight}};width:{{size[index].imageWidth}}' src='{{hostimg}}{{item.image}}'></image>
+        <text wx:if='{{item.image == ""}}' class='content'>{{item.Content}}</text>
+    </view>
+  </view>
+  
+</view>
+<form bindsubmit='send'  report-submit='true' >
+  <view class='input' style='{{upinput}}'>
+      <button bindtap='chooseImg' class='button' ><image class='upimg' src='/images/picture.png'></image></button>
+      <input class='sendcontent' bindfocus='inputFocus' bindblur='inputBlur' confirm-type='send' bindconfirm='send' value='{{text}}' bindinput='inputchange'></input>
+      <button form-type='submit' wx:if="{{isAndroid}}" class='button sendbutton'>发送</button>
+  </view>
+</form>

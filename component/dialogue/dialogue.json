@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "imagelist":"../imagelist/imagelist",
+    "intro":"../intro/intro",
+    "loading":"../loading/loading"
+  }
+}

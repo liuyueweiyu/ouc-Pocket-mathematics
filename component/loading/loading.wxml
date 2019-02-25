@@ -1,0 +1,12 @@
+<!--component/loading.wxml-->
+<view class='loading'>
+  <view class='loading-box '>
+      <view class='loading-item loading-item-border'></view>
+  </view>
+  <view class='loading-box loading-center'>
+      <view class='loading-item loading-item-center'></view>
+  </view>
+  <view class='loading-box '>
+      <view class='loading-item loading-item-border'></view>
+  </view>
+</view>

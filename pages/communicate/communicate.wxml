@@ -1,0 +1,7 @@
+<!--pages/communicate/communicate.wxml-->
+<import src='/component/banner/banner' />
+<import src='/component/navlist/navlist' />
+<import src='/component/publishbutton/publishbutton' />
+<template is='banner' data='{{...banner}}' />
+<template is='navlist' data='{{navlist}}' />
+<publishbutton isUrl='1' text='发布文章'></publishbutton>

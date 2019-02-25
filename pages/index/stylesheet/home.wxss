@@ -1,0 +1,94 @@
+/* 首页 */
+.main{
+  width: 750rpx;
+}
+.banner{
+  width: 100%;
+  height: 232rpx;
+  background: linear-gradient(90deg,rgb(0, 180, 219),rgb(0, 131, 176));
+  overflow: hidden;
+}
+.banner image{
+  margin-top: 14rpx;
+  width: 436rpx;
+}
+.banner .intro{
+    display: block;
+    float: right;
+    color:rgba(255,255,255,1);
+    text-align: right;
+    margin-right: 40rpx;
+}
+.banner .bigtitle{
+  display: block;
+  font-size:40rpx;
+  line-height: 40rpx;
+  margin-top: 68rpx;
+  margin-bottom: 30rpx;
+}
+.banner .more{
+  font-size:20rpx;
+  line-height: 20rpx;
+  margin-right: 5rpx;
+} 
+.section{
+  padding: 48rpx 0;
+}
+.section .item{
+  display: inline-block;
+  width: 150rpx;
+  margin-left: 30rpx;
+  height: 150rpx;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 152rpx;
+  box-shadow: 7rpx 7rpx 20rpx 0rpx gray;
+}
+
+.consultative{
+  font-size: 30rpx;
+}
+
+.consultative .title{
+  display: block;
+  padding:0 0 11rpx 30rpx;
+  border-bottom: 2rpx solid #b3b3b3;
+}
+
+.consultative .help{
+  height: calc(100vh - 625rpx);
+  padding-top: 30rpx;
+}
+
+.consultative .help .item{
+  margin-bottom: 30rpx;
+  height: 90rpx;
+  display: flex;
+  align-items:center;
+}
+.consultative .help image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin: 0 30rpx 0 30rpx;
+}
+.consultative .help .offline{
+  color: rgb(204, 204, 204)
+}
+.consultative .help .offline-button{
+  background: rgb(204, 204, 204)
+}
+
+.consultative .help button{
+  display: inline-block;
+  width: 180rpx;
+	height: 60rpx;
+  color: #fff;
+  font-size: 24rpx;
+	background-color: #09bb07;
+	border-radius: 14rpx;
+  margin-right: 30rpx;
+}
+

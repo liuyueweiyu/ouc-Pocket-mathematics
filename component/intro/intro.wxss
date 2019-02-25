@@ -1,0 +1,27 @@
+/* component/intro/intro.wxss */
+.intro{
+  height: 90rpx;
+}
+.intro image{
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  float: left;
+  margin-right: 18rpx;
+}
+.intorbox{
+  float: left;
+}
+.intro .author{
+  display: block;
+  font-size:30rpx;
+  line-height: 26rpx;
+  color:rgba(90,124,171,1);
+  margin:14rpx 0 24rpx;
+}
+.intro .time{
+  display: block;
+  font-size:20rpx;
+  color:rgba(204,204,204,1);
+  line-height: 18rpx;
+}

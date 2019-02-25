@@ -1,0 +1,21 @@
+/* pages/commits/commits.wxss */
+@import "/component/imagelist/imagelist";
+@import "/component/intro/intro";
+.commits{
+  
+  background:#EFEFF4; 
+  
+}
+.item{
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 8rpx;
+  padding-bottom: 22rpx;
+}
+.item .content{
+  display: block;
+  margin:30rpx 0;
+  font-size:28rpx;
+  color:rgba(51,51,51,1);
+  line-height:36rpx;
+}

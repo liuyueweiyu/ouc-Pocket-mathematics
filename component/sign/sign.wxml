@@ -1,0 +1,8 @@
+<!--component/sign/sign.wxml-->
+<view class='container'>
+  <image class='background child' src='/images/bg.png'></image>
+  <form class='box child'>
+    <slot></slot>
+  </form>
+</view>
+

@@ -1,0 +1,32 @@
+.message{
+  background: #EFEFF4;
+}
+.message .tab{
+  display: block;
+  width: 210prx;
+  height: 36rpx;
+  padding: 37.5rpx 270rpx;
+  font-size:36rpx;
+  color:rgba(179,179,179,1);
+  
+}
+.message .tab .conso{
+  float: left;
+  position: relative;
+}
+.message .tab .reply{
+  float: right;
+  position: relative;
+}
+.message .tab .select{
+  color:rgba(0,0,0,1);
+}
+.message .tab .spot{
+  width:16rpx;
+  height:16rpx;
+  background:rgba(241,44,32,1);
+  border-radius:50%;
+  position: absolute;
+  right:-10rpx;
+
+}
