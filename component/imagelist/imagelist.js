@@ -44,8 +44,9 @@ Component({
       var results = {};
       wx.getSystemInfo({
         success: function (res) {
-          windowWidth = 296;
-          // windowHeight = res.windowHeight;
+          // windowWidth = 296;
+          windowWidth = res.windowWidth;
+          windowHeight = res.windowHeight;
           //判断按照那种方式进行缩放
           if (originalWidth > windowWidth) {//在图片width大于手机屏幕width时候
             autoWidth = windowWidth + 'rpx';

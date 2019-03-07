@@ -11,7 +11,7 @@ Page({
     helplist: [],    //在线咨询列表
     hostimg: app.hostimg,
     Title: '',
-    menuindex: 3,
+    menuindex: 0,
     //消息回复相关data
     msgnumber: 0,   //未读消息总数
     replynumber: 0,  //未读回复总数
@@ -21,8 +21,9 @@ Page({
     // storageMsgUserMap:{},
     storageReply: [],
     // storageReplyUserMap:{}
-    array: ['在线', '离线'],
+    array: ['离线', '在线'],
     index: 0,
+    isIPX:false
   },
   help: function (e) {
     wx.navigateTo({
@@ -33,15 +34,59 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
+    const that = this;
+    wx.getSystemInfo({
+      success: function(res) {
+        console.log(res)
+        if(res.windowHeight > 800){
+          that.setData({
+            isIPX: true
+          })
+        }
+      },
+    })
     this.load(options);
+
   },
   bindPickerChange: function (e) {
-    this.setData({
-      index: e.detail.value
-    });
+    const that = this,
+          index = e.detail.value;
     
+    wx.request({
+      url: app.hostapi + 'onlineState/',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      data: {
+        session: app.user.session,
+        state: index == 1 ? 'onLine' :'offLine'
+      },
+      method: "POST",
+      success: function (res) { 
+        if(res.data.state == 1){
+          // console.log(res);
+          const user = that.data.user;
+          user.isOnline = index == 1 ? true:false;
+          that.setData({
+            index: e.detail.value,
+            user
+          });
+          wx.setStorage({
+            key: 'user',
+            data: user,
+          })
+        }
+        
+      },
+      fail: function (err) { }
+    })
 
-
+  },
+  home: async function(){
+    const res = await this.getOnlinehelp();
+    const data = res.data;
+    this.setData({
+      helplist: data.result,
+      menuindex:0
+    })
   },
   //页面加载函数
   load: async function (options) {
@@ -55,7 +100,8 @@ Page({
         return;
       }
       this.setData({
-        user: app.user
+        user: app.user,
+        index:app.user.isOnline == false ? 0:1
       })
       let res;
       res = await this.getOnlinehelp();
@@ -194,7 +240,7 @@ Page({
     }
     if(unReadMsg.data.state != 1){
       wx.showToast({
-        title: '获取回复失败!',
+        title: unReadMsg.data.msg,
         icon:'none'
       })
       wx.redirectTo({
@@ -261,7 +307,7 @@ Page({
     }
     if (unReadReply.data.state != 1) {
       wx.showToast({
-        title: '获取回复失败!',
+        title: unReadReply.data.msg,
         icon: 'none'
       })
       wx.redirectTo({
@@ -310,13 +356,30 @@ Page({
     });
   },
   logout: function () {
-    wx.setStorage({
-      key: 'user',
-      data: {},
-    });
-    wx.redirectTo({
-      url: '../login/login',
+    wx.request({
+      url: app.hostapi + 'logoff/',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      data: {
+        session: app.user.session,
+        stuCode:app.user.stuCode
+      },
+      method: "POST",
+      success: function (res) {
+        console.log(res);
+        if (res.data[0].statu == 1) {
+          wx.setStorage({
+            key: 'user',
+            data: {},
+          });
+          wx.redirectTo({
+            url: '../login/login',
+          })
+        }
+
+      },
+      fail: function (err) { }
     })
+
   },
   deleteadvisory:function(e){
     // console.log(e);

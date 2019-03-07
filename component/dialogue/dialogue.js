@@ -36,8 +36,7 @@ Component({
       })
     },
     reply(event){
-      console.log(event);
-      this.triggerEvent('reply', event.target.dataset);
+      
       const that = this;
       if (this.data.text.length >= 500) {
         wx.showToast({
@@ -46,13 +45,13 @@ Component({
         })
         return;
       }
-      console.log('img'+this.data.img);
-      if (this.data.img != '')
+      if (this.data.img != ''){
+        
         wx.uploadFile({
           url: app.hostapi + "replyMathCCPost/",
           header: { 'content-type': 'multipart/form-data' },
           filePath: that.data.img,
-          name:'photo',
+          name: 'photo',
           formData: {
             toPostId: event.target.dataset.id,
             session: app.user.session,
@@ -60,10 +59,14 @@ Component({
             // havePhoto
           },
           method: "POST",
-          success: function (res) { that.success(res);},
-          fail: function (err) {}
+          success: function (res) { 
+            that.triggerEvent('reply', event.target.dataset);
+            that.success(res); },
+          fail: function (err) { }
         });
+      }
       else if (this.data.text.trim() != ''){
+        // this.triggerEvent('reply', event.target.dataset);
         wx.request({
           url: app.hostapi + "replyMathCCPost/",
           header: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -74,7 +77,9 @@ Component({
             havePhoto:'None',
           },
           method: "POST",
-          success: function (res) { that.success(res); },
+          success: function (res) { 
+            that.triggerEvent('reply', event.target.dataset);
+            that.success(res); },
           fail: function (err) { }
         })
       }
@@ -84,7 +89,9 @@ Component({
       wx.showToast({
         title: data.msg,
       });
+      
       if (data.state == 1) {
+        
         this.setData({
           text: '',
           img: '',

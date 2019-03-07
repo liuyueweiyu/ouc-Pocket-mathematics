@@ -1,4 +1,3 @@
-
 <!-- 首页 -->
 <view wx:if='{{menuindex == 0}}' class='main'>
   <view class='banner'>
@@ -88,43 +87,43 @@
   <view class='cover'>
     <image bindtap='changeCover' src='{{hostimg}}{{user.headImage}}'></image>
   </view>
-  <text class='name' style='{{user.isTeacher != "True"? "margin-bottom: 75rpx;":""}}'>{{user.nickName}}</text>
+  <text class='name' style='{{isIPX ? "margin-bottom: 120rpx;" : (user.isTeacher != "True"? "margin-bottom: 75rpx;":"")}}'>{{user.nickName}}</text>
   <view class='introitem'>
     <image class='icon' mode='widthFix' src='/images/people.png'></image>
     <text>学号</text>
       {{user.stuCode}}
   </view>
   <view class='introitem'>
-    <image class='icon' mode='widthFix' src='/images/people.png'></image>
+    <image class='icon' mode='widthFix' src='/images/card.png'></image>
     <text>姓名</text>
       {{user.name}}
   </view>
-  <navigator url='../editor/editor?name=2'>
+  <navigator url='../editor/editor?name={{user.nickName}}'>
     <view class='introitem'>
-      <image class='icon' mode='widthFix' src='/images/card.png'></image>
+      <image class='icon' mode='widthFix' src='/images/label.png'></image>
       <text>昵称</text>
         {{user.nickName}}
     <image class='turnleft' mode='widthFix' src='/images/turn-left.png'></image>
     </view>
   </navigator>
     <view class='introitem'>
-    <image class='icon' mode='widthFix' src='/images/people.png'></image>
+    <image class='icon' mode='widthFix' src='/images/email.png'></image>
     <text>邮箱</text>
-      {{user.name}}
+      {{user.email}}
   </view>
   <view wx:if='{{user.isTeacher == "True"}}' class='introitem'>
     <image class='icon' mode='widthFix' src='/images/people.png'></image>
     <text>状态</text>
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
           {{array[index]}}
- 
     </picker>
+     <image class='turnleft' mode='widthFix' src='/images/turn-left.png'></image>
   </view>
   <button bindtap='logout' class='logout'>退出登录</button>
 </view>
 <!-- 菜单 -->
 <view class='menu'>
-  <view class="{{menuindex == 0? 'item choosed':'item'}}" data-index='0' bindtap='changeMenu'>
+  <view class="{{menuindex == 0? 'item choosed':'item'}}" data-index='0' bindtap='home'>
       <image src='/images/home.png' class='picture'></image>
       <text>首页</text>
   </view>

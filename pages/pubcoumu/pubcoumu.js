@@ -34,7 +34,7 @@ Page({
       });
     }, 1500);
     const formdata = e.detail.value;
-    if (!this.WxValidate.checkForm(formdata)) {
+    if (!this.WxValidate.checkForm(formdata) && this.data.imgs.length != 1) {
       console.log(this.WxValidate.errorList);
       wx.showToast({
         title: this.WxValidate.errorList[0].msg,
@@ -62,9 +62,10 @@ Page({
             id: data.id
           })
           if (that.data.imgs.length == 0){
+            const msg = that.data.isExperience == 1 ? '管理员审核后即可发布' : '发布成功';
             wx.showModal({
               title: 'ouc掌上数学',
-              content: '发布成功!',
+              content: msg,
               success:function(res){
                 if (that.data.isExperience != 1){
                   wx.redirectTo({
@@ -97,10 +98,10 @@ Page({
   submitImage(i) {
     const that = this;
     if (i == this.data.imgs.length) {
-
+      const msg = that.data.isExperience == 1 ? '管理员审核后即可发布':'发布成功';
       wx.showModal({
         title: 'ouc掌上数学',
-        content: '发布成功!',
+        content: msg,
         success: function (res) {
           if (that.data.isExperience != 1) {
             wx.redirectTo({

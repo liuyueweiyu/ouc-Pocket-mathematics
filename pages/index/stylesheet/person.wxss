@@ -34,7 +34,7 @@
   border-top:1rpx solid rgba(214,213,214,1);
   text-align: center;
   line-height: 88rpx;
-  margin-bottom: 32rpx;
+  margin-bottom: 2.4vh;
 }
 .introitem .icon{
   width: 34rpx;

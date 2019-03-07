@@ -14,7 +14,7 @@
 <form bindsubmit='send'  report-submit='true' >
   <view class='input' style='{{upinput}}'>
       <button bindtap='chooseImg' class='button' ><image class='upimg' src='/images/picture.png'></image></button>
-      <input class='sendcontent' bindfocus='inputFocus' bindblur='inputBlur' confirm-type='send' bindconfirm='send' value='{{text}}' bindinput='inputchange'></input>
+      <input maxlength='140' class='sendcontent' bindfocus='inputFocus' bindblur='inputBlur' confirm-type='send' bindconfirm='send' value='{{text}}' bindinput='inputchange'></input>
       <button form-type='submit' wx:if="{{isAndroid}}" class='button sendbutton'>发送</button>
   </view>
 </form>

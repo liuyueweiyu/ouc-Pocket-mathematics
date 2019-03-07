@@ -5,7 +5,8 @@
   width:690rpx;
   height:56rpx;
   border:2rpx solid rgba(247,98,96,1);
-  border-radius:28rpx;
+  /* border-radius: 50%; */
+  border-radius:30rpx;
   margin: 32rpx auto;
   display: flex;
   justify-content:space-between;
@@ -13,8 +14,10 @@
 .newscategory .item{
   margin: 0;
   display: inline-block;
-  width:216rpx;
+  /* width:216rpx; */
+  width: 230rpx;
   height:100%;
+  /* border-radius: 50%; */
   border-radius:28rpx;
   line-height: 56rpx;
   font-size:30rpx;

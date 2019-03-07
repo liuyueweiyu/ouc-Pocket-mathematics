@@ -51,7 +51,7 @@ Page({
               },
               success: function (res) {
                 console.log(res);
-                if(that.data.success == 0)
+                if(that.data.success == 1)
                   return;
                 const response = JSON.parse(res.data);
                 if(response.state == 1)
@@ -81,7 +81,6 @@ Page({
                               const data = JSON.parse(res.data)[0];
                               if (data.statu == 1) {
                                 delete data.statu;
-                                console.log(data);
                                 wx.setStorage({
                                   key: "user",
                                   data

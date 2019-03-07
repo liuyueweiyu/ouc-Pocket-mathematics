@@ -42,7 +42,7 @@
 
 }
 .send .arrow{
-  left: 111rpx;
+  left: 112rpx;
 }
 .recieve .arrow{
   left:562rpx;

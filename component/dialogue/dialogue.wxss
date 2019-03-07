@@ -81,7 +81,7 @@
 
   display: block;
   margin:0 8rpx;
-  height:44rpx;
+  height:54rpx;
   /* width: 494rpx; */
   border: 1rpx solid rgba(217,217,217,1);
   font-size:24rpx;

@@ -42,7 +42,7 @@ Page({
       success: function (res) {
         if (res.platform == "ios") {
           that.setData({
-            isAndroid: false
+            isAndroid: false,
           })
         };
         wx.pageScrollTo({
@@ -127,8 +127,8 @@ Page({
       return;
     }
     if (this.data.img != ''){
-      console.log('评论')
-      console.log(that.data.img);
+      // console.log('评论')
+      // console.log(that.data.img);
       wx.uploadFile({
         url: app.hostapi + "replyMathCCPost/",
         header: { 'content-type': 'multipart/form-data' },
