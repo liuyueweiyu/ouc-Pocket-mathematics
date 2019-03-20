@@ -4,7 +4,7 @@
 .newscategory{
   width:690rpx;
   height:56rpx;
-  border:2rpx solid rgba(247,98,96,1);
+  border:2rpx solid #ff6666;
   /* border-radius: 50%; */
   border-radius:30rpx;
   margin: 32rpx auto;
@@ -21,11 +21,11 @@
   border-radius:28rpx;
   line-height: 56rpx;
   font-size:30rpx;
-  color:rgba(247,98,96,1);
+  color:#ff6666;
   background: #fff;
   border: none;
 }
 .newscategory .select{
-  background:rgba(247,98,96,1);
+  background:#ff6666;
   color: #fff;
 }

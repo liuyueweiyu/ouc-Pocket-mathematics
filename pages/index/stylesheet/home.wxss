@@ -87,7 +87,7 @@
 	height: 60rpx;
   color: #fff;
   font-size: 24rpx;
-	background-color: #09bb07;
+	background-color: #00B51D;
 	border-radius: 14rpx;
   margin-right: 30rpx;
 }

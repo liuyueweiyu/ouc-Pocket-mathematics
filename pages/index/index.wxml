@@ -11,8 +11,8 @@
   </view>
   <view class='section'>
     <navigator url='../communicate/communicate' class='item' style='background-color: #10aeff;'>数学交流</navigator>
-    <navigator url='../experience/experience' class='item' style='background-color: #09bb07;'>经验分享</navigator>
-    <navigator url='../share/share'  class='item' style='background-color: #f76260;'>资料共享</navigator>
+    <navigator url='../experience/experience' class='item' style='background-color: #00B51D;'>经验分享</navigator>
+    <navigator url='../share/share'  class='item' style='background-color: #ff6666;'>资料共享</navigator>
     <navigator url='../news/news'  class='item' style='background-color: #ffbe00;'>最新资讯</navigator>
   </view>
   <view class='consultative'>
