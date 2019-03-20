@@ -38,19 +38,25 @@ Page({
       success: function (res) {
         const data = res.data;
         if(data.state == 1){
-          if (data.result.length != 0){
-            that.setData({
-              list: isBottom ? that.data.list.concat(data.result) : data.result,
-              select: index
-            })
-          }
-          else{
-            that.setData({
-              select: index,
-              can: 0,
-              loading: 0
-            });
-          }
+          // if (data.result.length != 0){
+          that.setData({
+            list: isBottom ? that.data.list.concat(data.result) : data.result,
+            select: index,
+            loading: data.result.length < 5 ? 0 : 1,
+          })
+          // if (data.result.length != 5)
+          //   that.setData({
+          //     loading: 0,
+          //     can: 0
+          //   })
+          // }
+          // else{
+          //   that.setData({
+          //     select: index,
+          //     can: 0,
+          //     loading: 0
+          //   });
+          // }
           
         }
         else{

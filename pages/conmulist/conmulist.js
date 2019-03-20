@@ -1,4 +1,4 @@
-// pages/conmulist/comnmulis.js
+ // pages/conmulist/comnmulis.js
 import urlUtils from '../../utils/url.js';
 import category from '../../utils/category.js';
 const app = getApp();

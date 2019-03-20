@@ -1,28 +1,11 @@
 //app.js
+const hostapi = 'http://132.232.78.106/api/';
 App({
   onLaunch: function () {
     // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        wx.getStorage({
-          key: 'user',
-          success: function(response) {
-            const data = {
-              session: response.data.session,
-              jscode:res.code
-            };
-          },
-        })
-        
+    
 
-      }
-    })
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -43,12 +26,48 @@ App({
       }
     })
   },
+  onShow:function(){
+    changeStage('onLine');
+  },
+  onHide:function(){
+    changeStage('offLine');
+  },
   globalData: {
     unread:0,
     unReadPeply:[],
     unReadMsg:[]
   },
-  hostapi: 'http://132.232.78.106/api/',
+  hostapi,
   hostimg: 'http://132.232.78.106/media/',
   user:{}
 })
+
+function changeStage(state){
+  wx.getStorage({
+    key: 'user',
+    success: function (res) {
+      const user = res.data;
+      wx.request({
+        url: hostapi + 'onlineState/',
+        header: { "Content-Type": "application/x-www-form-urlencoded" },
+        data: {
+          session: user.session,
+          state
+        },
+        method: "POST",
+        success: function (res) {
+          if (res.data.state == 1) {
+            user.isOnline = true;
+            wx.setStorage({
+              key: 'user',
+              data: user,
+            })
+          }
+
+        },
+        fail: function (err) { }
+      })
+
+    },
+  })
+}

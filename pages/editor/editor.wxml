@@ -1,7 +1,10 @@
 <!--pages/editor/editor.wxml-->
 <form class='box' bindsubmit='submit'>
   <input class='background input' bindinput='textbind' name='input' maxlength='18' value="{{text}}" >
-  <button class='cross' bindtap="cleartext">×</button>
+  <view class='bottonbox  clearfloat' bindtap="cleartext"  >
+    <button class='cross' >×</button>
+  </view>
+
   </input>
   <button class='background botton' form-type='submit'>提交</button>
 </form>

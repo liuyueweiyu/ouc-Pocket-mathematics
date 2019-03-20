@@ -35,6 +35,20 @@ Component({
         text: event.detail.value
       })
     },
+    jump(event){
+      // console.log(event);
+      const item = event.currentTarget.dataset;
+      const list = this.data.list;
+      console.log(item)
+      console.log(list);
+      list[item.index].clickNum++; 
+      this.setData({
+        list
+      })
+      wx.navigateTo({
+        url: `/pages/detail/detail?commit=${item.reply}&&id=${item.id}`,
+      })
+    },
     reply(event){
       
       const that = this;
@@ -46,7 +60,7 @@ Component({
         return;
       }
       if (this.data.img != ''){
-        
+        // console.log(this.data.img)
         wx.uploadFile({
           url: app.hostapi + "replyMathCCPost/",
           header: { 'content-type': 'multipart/form-data' },
@@ -56,6 +70,7 @@ Component({
             toPostId: event.target.dataset.id,
             session: app.user.session,
             content: this.data.text,
+            havePhoto: 'True'
             // havePhoto
           },
           method: "POST",

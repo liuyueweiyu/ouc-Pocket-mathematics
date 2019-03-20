@@ -53,6 +53,7 @@
 .textarea textarea{
   width: 495rpx;
   float: right;
+  /* height: 3em; */
   height: 100%;
 }
 .upimg{

@@ -1,16 +1,15 @@
 <!--component/dialogue/dialogue.wxml-->
 <view class='dialoguelist'>
   <view wx:for='{{list}}' wx:key='{{index}}' class='dialogue' >
-  
       <intro author='{{item.author}}' Time='{{item.Time}}' headImage='{{item.headImage}}'></intro>
-      <navigator url='/pages/detail/detail?commit={{reply}}&&id={{item.id}}'>
+      <!-- <navigator url='/pages/detail/detail?commit={{reply}}&&id={{item.id}}'> -->
+      <view bindtap='jump' data-reply='{{reply}}' data-id='{{item.id}}' data-index='{{index}}'>
         <text class='title'>{{item.Title}}</text>
         <text class='content'>{{item.Content}}</text>
-      </navigator>
+      </view>
       <imagelist srcs='{{item.images}}'></imagelist>
       <view wx:if="{{reply=='1'}}" class='reply'>
-      <navigator url='/pages/detail/detail?commit={{reply}}&&id={{item.id}}'>
-
+      <view bindtap='jump' data-reply='{{reply}}'  data-id='{{item.id}}' data-index='{{index}}'>
         <view class='item'>
           <image class='scan' src='/images/scan.png'></image>
           <text>{{item.clickNum}}</text>
@@ -19,7 +18,7 @@
             <image class='commit' src='/images/commit.png'></image>
             <text>{{item.replyNum}}</text>
         </view>
-      </navigator>
+      </view>
         <view class='inputbox'>
             <image class='picture' wx:if='{{imgindex != index}}' data-index='{{index}}' bindtap='chooseImg' src='/images/picture.png'></image>
             <image class='picture' wx:if='{{imgindex == index}}'  data-index='{{index}}' bindtap='chooseImg' src='/images/picture-blue.png'></image>

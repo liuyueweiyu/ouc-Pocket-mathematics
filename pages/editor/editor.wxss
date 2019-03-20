@@ -45,3 +45,12 @@
   /* line-height: 30rpx; */
 
 }
+.bottonbox{
+  position: absolute;
+  width: 110rpx;
+  height: 100%;
+  top:0;
+  right: 0;
+  /* background: red */
+
+}

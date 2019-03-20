@@ -10,7 +10,7 @@ Page({
       imgsrc: '/images/banner-yellow.png',
       text: '最新资讯'
     },
-    navlist: ['通知公告', '讲座信息'],
+    navlist: ['通知公告', '讲座信息'], 
     select: 0,
     type: '',
     list: [],
@@ -35,19 +35,20 @@ Page({
       success: function (res) {
         const data = res.data;
         if (data.state == 1) {
-          if (data.result.length != 0) {
+          // if (data.result.length != 0) {
             that.setData({
               list: isBottom ? that.data.list.concat(data.result) : data.result,
-              select: index
-            })
-          }
-          else {
-            that.setData({
               select: index,
-              can: 0,
-              loading:0
+              loading: data.result.length < 5 ? 0 : 1,
             })
-          }
+          // }
+          // else {s
+          //   that.setData({
+          //     select: index,
+          //     can: 0,
+          //     loading:0
+          //   })
+          // }
         }
         else {
           wx.showModal({

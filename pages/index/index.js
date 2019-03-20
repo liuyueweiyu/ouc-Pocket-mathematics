@@ -22,8 +22,9 @@ Page({
     storageReply: [],
     // storageReplyUserMap:{}
     array: ['离线', '在线'],
-    index: 0,
-    isIPX:false
+    index: 1,
+    isIPX:false,
+    interval:1
   },
   help: function (e) {
     wx.navigateTo({
@@ -51,7 +52,6 @@ Page({
   bindPickerChange: function (e) {
     const that = this,
           index = e.detail.value;
-    
     wx.request({
       url: app.hostapi + 'onlineState/',
       header: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -118,6 +118,7 @@ Page({
       });
 
       await this.bindMsg();
+      this.run();
       await this.bindReply();
 
     }
@@ -126,6 +127,16 @@ Page({
       console.log(e);
       wx.redirectTo({
         url: '../login/login',
+      });
+    }
+  },
+  run:function(){
+    if (this.data.user.isOnline) {
+      const interval = setInterval(() => {
+        this.bindMsg();
+      }, 60000);
+      this.setData({
+        interval
       });
     }
   },
@@ -231,7 +242,6 @@ Page({
       storage,
       number = 0,
       userIndex = new Map();
-    
     try {
       storage = await this.getLocakInfor('unReadMsg-' + app.user.stuCode);
     }
@@ -421,6 +431,7 @@ Page({
     this.setData({
       user:getApp().user
     })
+    this.run();
     //this.bindMsg(this.data.menuindex);
   },
 
@@ -428,7 +439,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    clearInterval(this.data.interval);
   },
 
   /**

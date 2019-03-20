@@ -9,6 +9,7 @@ Page({
     text:''
   },
   cleartext:function(e){
+    console.log(1)
     this.setData({
       text:''
     })
