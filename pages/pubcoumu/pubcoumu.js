@@ -12,7 +12,7 @@ Page({
       isExperience:1,
       frequent:0
     },
-    array: ['线性代数', '高等数学', '概率统计', '数学分析', '高等数学','其他'],
+    array: ['线性代数', '高等数学', '概率统计', '数学分析', '高等代数','其他'],
     index: 0,
     imgs: [],
     placeholder:0,
