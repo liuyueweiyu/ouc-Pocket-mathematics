@@ -20,7 +20,7 @@
   display: inline-block;
   border:1px solid #d8d8d8;
   max-width: 396rpx;
-  padding:27rpx 18rpx;
+  padding:16rpx 18rpx;
   word-break: break-all;
   margin-left: 39rpx;
   border-radius: 20rpx;
@@ -42,7 +42,7 @@
 
 }
 .send .arrow{
-  left: 112rpx;
+  left: 114rpx;
 }
 .recieve .arrow{
   left:562rpx;
@@ -53,7 +53,7 @@
 .recieve .content{
   background: #AFE56E;
   float: right;
-  right:39rpx;
+  right:41rpx;
 }
 
 .send .image{
@@ -88,6 +88,8 @@
   padding: 0 30rpx;
   display: flex;
   align-items:center;
+  z-index:10;
+
 }
 .button{
   margin: 0;
@@ -106,10 +108,10 @@
 .sendcontent{
   flex-grow:1;
   font-size:24rpx;
-  height:56rpx;
+  height:46rpx;
   background:rgba(255,255,255,1);
-  border:2rpx solid rgba(179,179,179,1);
-  border-radius:16rpx;
+  border:1rpx solid rgba(179,179,179,1);
+  border-radius:8rpx;
   padding: 2rpx 16rpx;
   margin: 0 18rpx;
 }

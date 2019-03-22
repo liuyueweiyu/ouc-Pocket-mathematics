@@ -65,24 +65,22 @@
 .inputbox{
   display: flex;
   margin:30rpx 0 22rpx;
-  height: 56rpx;
+  height: 50rpx;
 }
 .reply .picture{
   /* float: left; */
   display: block;
   /* display: inline-block; */
-  width:56rpx;
-  height:56rpx;
+  width:50rpx;
+  height:50rpx;
   margin-bottom: 4rpx;
 }
 .reply .commitinput{
-  /* float: left; */
   flex:2;
-
   display: block;
   margin:0 8rpx;
-  height:54rpx;
-  /* width: 494rpx; */
+  height:46rpx;
+  border-radius:8rpx;
   border: 1rpx solid rgba(217,217,217,1);
   font-size:24rpx;
   color:rgba(102,102,102,1);
