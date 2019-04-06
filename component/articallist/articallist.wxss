@@ -18,13 +18,17 @@
 .articallist .item .textbox{
   float: left;
   height: 100%;
+  max-width:463rpx;
 }
 .articallist .item .title{
   display: block;
-  margin-top: 18rpx;
   margin-bottom: 23rpx;
   font-size:36rpx;
-  line-height: 36rpx;
+  max-height: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height:1.75em;
+
 }
 .articallist .item .intro{
   display: block;

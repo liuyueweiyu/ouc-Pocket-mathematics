@@ -116,11 +116,9 @@ Page({
         Title,
         TitleNav
       });
-
       await this.bindMsg();
-      this.run();
       await this.bindReply();
-
+      this.run();
     }
     catch (e) {
       console.log('err:')
@@ -132,11 +130,16 @@ Page({
   },
   run:function(){
     if (this.data.user.isOnline) {
+      const time = 1 * 60 * 1000;
       const interval = setInterval(() => {
         this.bindMsg();
-      }, 60000);
+      }, time);
+      const replyinter = setInterval(()=>{
+        this.bindReply();
+      },time);
       this.setData({
-        interval
+        interval,
+        replyinter
       });
     }
   },
@@ -328,11 +331,6 @@ Page({
     else {
       unReadReply = unReadReply.data.result;
     }
-
-    // unReadReply.forEach(function(v,i){
-    //   if (v.Content.length > 15)
-    //     v.Content = v.Content.substr(0, 15)+'...';
-    // })
     this.setData({
       unReadReply: unReadReply.concat(storage),
       replynumber: unReadReply.length
@@ -440,6 +438,7 @@ Page({
    */
   onHide: function () {
     clearInterval(this.data.interval);
+    clearInterval(this.data.replyinter);
   },
 
   /**

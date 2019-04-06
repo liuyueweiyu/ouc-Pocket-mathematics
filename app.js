@@ -1,5 +1,6 @@
 //app.js
-const hostapi = 'http://132.232.78.106/api/';
+const ip = 'https://www.mathwechat.top/';
+const hostapi = ip +'api/';
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -38,7 +39,7 @@ App({
     unReadMsg:[]
   },
   hostapi,
-  hostimg: 'http://132.232.78.106/media/',
+  hostimg: ip + 'media/',
   user:{}
 })
 
